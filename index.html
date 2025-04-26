@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TriLab Performance | Avaliação e Acompanhamento Fisiológico</title>
+  <meta name="description" content="Site oficial da TriLab Performance, centro especializado em avaliação e acompanhamento fisiológico para atletas de endurance com design dinâmico inspirado no triatlo.">
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <!-- Google Fonts: Montserrat & Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #f8fafc;
+      color: #215a5d;
+    }
+    h1, h2, h3, .brand {
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    .text-gradient {
+      background: linear-gradient(90deg, #2b8782, #38b2ac);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(33,90,93,0.10), 0 2px 4px rgba(33,90,93,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(33,90,93,0.14), 0 4px 8px rgba(33,90,93,0.10);
+    }
+    .nav-link {
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+      font-weight: 500;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #38b2ac;
+      border-bottom: 2px solid #38b2ac;
+    }
+    ::selection { background: #b2f5ea; color: #215a5d; }
+    @media print {
+      .no-print { display: none !important;}
+    }
+    /* Simple fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: none;}
+    }
+  </style>
+  <script>
+    // Smooth scroll for nav links
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const target = document.getElementById(this.getAttribute('href').substring(1));
+          if (target) {
+            e.preventDefault();
+            window.scrollTo({ top: target.offsetTop - 88, behavior: 'smooth' });
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body class="bg-gray-50 antialiased overflow-x-hidden">
+  <!-- Header/Nav -->
+  <header class="w-full bg-white shadow-lg fixed z-30 top-0 left-0 no-print" style="background:rgba(255,255,255,0.97);">
+    <div class="max-w-6xl mx-auto flex items-center justify-between py-3 px-6">
+      <!-- Logo and Brand -->
+      <div class="flex items-center space-x-4">
+        <img src="https://page.genspark.site/v1/base64_upload/93d6734ca6f1acd92fd05decd54b1894" alt="TriLab Performance Logo" class="h-12 w-12 rounded-full bg-white p-1 border-2 border-teal-600 shadow" style="object-fit:contain;">
+        <span class="text-2xl font-bold text-gradient brand tracking-tight">TRILAB PERFORMANCE</span>
+      </div>
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-10">
+        <a href="#objetivos" class="nav-link text-lg">Objetivos</a>
+        <a href="#planos" class="nav-link text-lg">Planos</a>
+        <a href="#horarios" class="nav-link text-lg">Horários</a>
+        <a href="#contacto" class="nav-link text-lg">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="fade-in" style="padding-top:88px;">
+    <div class="max-w-6xl mx-auto px-4 pb-2 pt-12 flex flex-wrap justify-between items-center">
+      <div class="w-full md:w-3/5 mb-10 md:mb-0 pr-0 md:pr-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gradient leading-tight mb-4">A sua performance de endurance começa na ciência.</h1>
+        <p class="text-lg md:text-xl text-teal-800 mb-6">Avaliação e acompanhamento fisiológico integrados para quem corre, pedala, nada ou faz triatlo.<br> Venha descobrir o seu verdadeiro potencial com recursos de última geração.</p>
+        <a href="#planos" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded shadow transition-all duration-200 text-lg">Saiba Mais</a>
+      </div>
+      <div class="w-full md:w-2/5 flex justify-center md:justify-end">
+        <!-- Logo (again, on right for simple hero visual) -->
+        <img src="https://page.genspark.site/v1/base64_upload/93d6734ca6f1acd92fd05decd54b1894" class="h-40 md:h-56 w-auto" alt="Logo TriLab Performance"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Swoosh separator -->
+  <div class="w-full" style="height:50px; background:linear-gradient(95deg, #2b8782 75%, #38b2ac 100%); clip-path:polygon(0 80%, 100% 0, 100% 100%, 0 100%);"></div>
+
+  <!-- Objetivos -->
+  <section id="objetivos" class="max-w-5xl mx-auto px-4 py-12 fade-in">
+    <h2 class="text-3xl md:text-4xl font-bold text-gradient mb-6 text-center">Objetivos</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-lg text-gray-700 mb-4">
+          Na <span class="font-bold text-teal-700">TriLab Performance</span>, o nosso compromisso é claro: proporcionar <span class="text-teal-800 font-semibold">avaliação e acompanhamento fisiológico de excelência</span>, com base na ciência, tecnologia avançada e profundo conhecimento do corpo humano em esforço.
+        </p>
+        <ul class="list-none space-y-2 text-base text-gray-600">
+          <li class="flex items-start"><span class="mr-2 text-teal-700"><i class="fas fa-shield-alt"></i></span> Equipamentos de última geração para avaliação corporal, testes de VO₂máx, biomecânica e limiares de esforço</li>
+          <li class="flex items-start"><span class="mr-2 text-teal-700"><i class="fas fa-users"></i></span> Ambiente técnico porém próximo, focado na individualidade</li>
+          <li class="flex items-start"><span class="mr-2 text-teal-700"><i class="fas fa-user-md"></i></span> Equipa multidisciplinar com nutricionista e fisioterapeuta</li>
+        </ul>
+      </div>
+      <div>
+        <div class="rounded-xl bg-gradient-to-br from-teal-50 to-white border border-teal-100 p-6 shadow flex flex-col space-y-3">
+          <span class="block text-base text-teal-700 font-semibold">Missão</span>
+          <p>Auxiliar atletas e praticantes recreativos a atingirem o seu máximo potencial físico, através de um <span class="font-bold text-teal-800">trabalho integrado entre fisiologia, nutrição e reabilitação</span>.</p>
+          <span class="block text-base text-teal-700 font-semibold">Para quem?</span>
+          <ul class="list-disc ml-6 text-gray-700">
+            <li>Atletas de corrida, ciclismo, natação e triatlo</li>
+            <li>Quem quer ultrapassar limites, seja na saúde, performance ou superação pessoal</li>
+            <li>Do iniciante ao competidor experiente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-lg text-gray-700 font-medium">
+      Seja para terminar a primeira prova ou bater um recorde pessoal, a <span class="text-teal-700 font-bold">TriLab Performance</span> é o ponto de partida.
+    </div>
+  </section>
+
+  <!-- Swoosh separator -->
+  <div class="w-full" style="height:44px; background:linear-gradient(95deg, #38b2ac 45%, #2b8782 100%); clip-path:polygon(0 0, 100% 80%, 100% 100%, 0 100%);"></div>
+
+  <!-- Planos / Cards -->
+  <section id="planos" class="max-w-6xl mx-auto px-4 py-12 fade-in">
+    <h2 class="text-3xl md:text-4xl font-bold text-gradient mb-8 text-center">Planos & Serviços</h2>
+    
+    <!-- Shortcuts for individual -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+      <!-- Nutricionista -->
+      <div class="card p-6 flex flex-col items-center text-center border-t-4 border-teal-400">
+        <div class="text-teal-500 text-3xl mb-2"><i class="fa-solid fa-apple-whole"></i></div>
+        <h3 class="font-bold text-xl mb-2">Nutricionista</h3>
+        <div class="mb-2 text-gray-700">
+          <span class="block font-semibold">Consulta inicial (1h):</span>
+          Avaliação + análise corporal + plano alimentar<br><span class="font-bold text-teal-700">50€</span>
+        </div>
+        <div class="mb-2 text-gray-700">
+          <span class="block font-semibold">Revisão/Acompanhamento (45min):</span>
+          Ajuste de plano, dúvidas, reforço<br>
+          <span class="font-bold text-teal-700">40€</span>
+        </div>
+        <div class="mb-2 text-gray-500 text-sm">Pack 3 consultas: <span class="font-bold text-teal-700">125€</span></div>
+      </div>
+      <!-- Fisioterapeuta -->
+      <div class="card p-6 flex flex-col items-center text-center border-t-4 border-teal-500">
+        <div class="text-teal-600 text-3xl mb-2"><i class="fa-solid fa-hand-holding-medical"></i></div>
+        <h3 class="font-bold text-xl mb-2">Fisioterapeuta</h3>
+        <div class="mb-2 text-gray-700">
+          <span class="block font-semibold">Consulta inicial (1h):</span>
+          Avaliação funcional + intervenção<br><span class="font-bold text-teal-700">55€</span>
+        </div>
+        <div class="mb-2 text-gray-700">
+          <span class="block font-semibold">Sessão continuação (45min):</span>
+          Reabilitação/prevenção/performance<br>
+          <span class="font-bold text-teal-700">45€</span>
+        </div>
+        <div class="mb-2 text-gray-500 text-sm">Pack 5 sessões: <span class="font-bold text-teal-700">210€</span></div>
+      </div>
+      <!-- Plano Base -->
+      <div class="card p-6 flex flex-col items-center text-center border-t-4 border-teal-400">
+        <div class="text-teal-400 text-3xl mb-2"><i class="fa-solid fa-running"></i></div>
+        <h3 class="font-bold text-xl mb-2">Plano Base</h3>
+        <div class="mb-2 text-gray-700 text-left text-sm">
+          Avaliação única, inclui anamnese, comp. corporal, postural+funcional, teste (VO2 ou limiar), relatório e recomendações.<br>
+        </div>
+        <span class="font-bold text-teal-700 text-lg mt-1">60€</span>
+      </div>
+      <!-- Nutri Start -->
+      <div class="card p-6 flex flex-col items-center text-center border-t-4 border-teal-500">
+        <div class="text-teal-600 text-3xl mb-2"><i class="fa-solid fa-leaf"></i></div>
+        <h3 class="font-bold text-xl mb-2">Nutri Start</h3>
+        <div class="mb-2 text-gray-700 text-left text-sm">
+          Plano Base + consulta Nutrição (plano alimentar personalizado, hábitos, etc).<br>
+        </div>
+        <span class="font-bold text-teal-700 text-lg mt-1">90€</span>
+      </div>
+    </div>
+
+    <!-- Detalhamento dos Planos principais  -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Duo Performance -->
+      <div class="card p-6 border-t-4 border-teal-600">
+        <div class="flex items-center">
+          <div class="text-teal-600 text-2xl mr-3"><i class="fa-solid fa-user-check"></i></div>
+          <h3 class="font-bold text-2xl mb-2">Plano Duo Performance</h3>
+        </div>
+        <p class="text-gray-700 mb-2 text-sm">Avaliação inicial completa + reavaliação 4-6 semanas depois.<br> Para medir evolução e garantir progresso.</p>
+        <ul class="list-disc ml-6 text-gray-700 text-sm mb-2">
+          <li>Relatório técnico detalhado</li>
+          <li>Testes fisiológicos adaptados à modalidade</li>
+          <li>Comparação de dados e evolução física</li>
+        </ul>
+        <div class="mt-1 text-xl font-bold text-teal-700">100€</div>
+      </div>
+      <!-- Duo Nutri -->
+      <div class="card p-6 border-t-4 border-teal-700">
+        <div class="flex items-center">
+          <div class="text-teal-700 text-2xl mr-3"><i class="fa-solid fa-utensils"></i></div>
+          <h3 class="font-bold text-2xl mb-2">Plano Duo Nutri</h3>
+        </div>
+        <p class="text-gray-700 mb-2 text-sm">Avaliação física + consulta Nutrição inicial + reavaliação física + nova consulta Nutrição. Mudança real para performance e composição corporal.</p>
+        <ul class="list-disc ml-6 text-gray-700 text-sm mb-2">
+          <li>Personalizado para performance/nutrição</li>
+          <li>Relatórios comparativos de evolução</li>
+        </ul>
+        <div class="mt-1 text-xl font-bold text-teal-700">140€</div>
+      </div>
+      <!-- Triatleta Elite -->
+      <div class="card p-6 border-t-4 border-gradient-to-br from-teal-700 to-teal-400 col-span-2">
+        <div class="flex items-center">
+          <div class="text-teal-800 text-2xl mr-3"><i class="fa-solid fa-star"></i></div>
+          <h3 class="font-bold text-2xl mb-2">TriAtleta Elite – Acompanhamento 360º</h3>
+        </div>
+        <p class="text-gray-700 mb-2 text-sm">Acompanhamento multidisciplinar, contínuo, com avaliações periódicas, consultas Nutrição e sessões Fisioterapia mensais, contacto direto e prioridade agendamento. Ideal para quem leva performance a sério.</p>
+        <ul class="list-disc ml-6 text-gray-700 text-sm mb-2">
+          <li>Planos de 3, 6 ou 9 meses</li>
+          <li>Inclui consultoria online durante o período (WhatsApp, e-mail)</li>
+          <li>Prioridade total em casos de lesão</li>
+        </ul>
+        <div class="mt-1 flex flex-wrap gap-4 text-gray-700">
+          <div class="bg-teal-100 rounded-lg px-4 py-2 text-center">
+            <div class="font-bold text-teal-900">3 meses</div>
+            <div><span class="text-xl font-semibold text-teal-800">190€</span>/mês<br>
+              <span class="text-xs">540€ total</span></div>
+          </div>
+          <div class="bg-teal-100 rounded-lg px-4 py-2 text-center">
+            <div class="font-bold text-teal-900">6 meses</div>
+            <div><span class="text-xl font-semibold text-teal-800">180€</span>/mês<br>
+              <span class="text-xs">1.050€ total</span></div>
+          </div>
+          <div class="bg-teal-100 rounded-lg px-4 py-2 text-center">
+            <div class="font-bold text-teal-900">9 meses</div>
+            <div><span class="text-xl font-semibold text-teal-800">170€</span>/mês<br>
+              <span class="text-xs">1.470€ total</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horários e Localização -->
+  <section id="horarios" class="max-w-4xl mx-auto px-4 py-12 fade-in">
+    <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-5 text-center">Horários</h2>
+    <div class="flex flex-wrap sm:flex-nowrap justify-center gap-12">
+      <div class="bg-white shadow flex flex-col justify-center items-center rounded-xl p-7 border border-teal-100 w-full sm:w-1/2 mb-4">
+        <div class="text-2xl text-teal-700 mb-2"><i class="fa-solid fa-clock"></i></div>
+        <div>
+          <div class="text-md text-gray-600 mb-1">Segunda a Sexta</div>
+          <div class="font-semibold text-teal-800 text-lg">9:30h - 12:30h</div>
+          <div class="font-semibold text-teal-800 text-lg">13:30h - 19:30h</div>
+        </div>
+      </div>
+      <div class="bg-white shadow flex flex-col justify-center items-center rounded-xl p-7 border border-teal-100 w-full sm:w-1/2 mb-4">
+        <div class="text-2xl text-teal-700 mb-2"><i class="fa-solid fa-map-marker-alt"></i></div>
+        <div>
+          <div class="text-md text-gray-600 mb-1">Atendimento presencial em centro técnico de avaliação (contacte-nos para saber morada e marcações)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato/Redes Sociais -->
+  <section id="contacto" class="max-w-4xl mx-auto px-4 py-12 fade-in">
+    <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-5 text-center">Contacto & Redes Sociais</h2>
+    <div class="flex flex-col md:flex-row justify-center gap-8 items-center">
+      <div class="flex flex-col items-center p-8 rounded-xl bg-teal-50 border border-teal-100 shadow mb-6 md:mb-0">
+        <div class="text-2xl mb-2 text-teal-700"><i class="fa-brands fa-instagram"></i></div>
+        <a href="https://www.instagram.com/trilab_performance" target="_blank" class="text-lg font-medium text-teal-800 transition hover:underline">@trilab_performance</a>
+      </div>
+      <div class="flex flex-col items-center p-8 rounded-xl bg-teal-50 border border-teal-100 shadow">
+        <div class="text-2xl mb-2 text-teal-700"><i class="fa-solid fa-envelope"></i></div>
+        <a href="mailto:geral.trilabperformace.pt@gmail.com" class="text-lg font-medium text-teal-800 hover:underline break-all">geral.trilabperformace.pt@gmail.com</a>
+      </div>
+    </div>
+    <!-- Simple contact form for demonstration, doesn't send email -->
+    <div class="mt-10 rounded-xl bg-white shadow p-8 border border-teal-50">
+      <div class="text-teal-700 font-semibold mb-4 text-lg text-center">Peça informações ou agende sua avaliação:</div>
+      <form class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-teal-700 mb-1 font-semibold" for="nome">Nome*</label>
+          <input id="nome" required type="text" class="w-full border border-teal-200 rounded px-3 py-2 focus:ring-2 focus:ring-teal-400" placeholder="Seu nome" />
+        </div>
+        <div>
+          <label class="block text-teal-700 mb-1 font-semibold" for="email">Email*</label>
+          <input id="email" required type="email" class="w-full border border-teal-200 rounded px-3 py-2 focus:ring-2 focus:ring-teal-400" placeholder="seu@email.com" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-teal-700 mb-1 font-semibold" for="mensagem">Mensagem*</label>
+          <textarea id="mensagem" required class="w-full border border-teal-200 rounded px-3 py-2 h-24 focus:ring-2 focus:ring-teal-400 resize-none"
+            placeholder="Qual sua dúvida ou serviço desejado?"></textarea>
+        </div>
+        <div class="md:col-span-2 flex justify-center">
+          <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-7 py-2 font-bold rounded transition">Enviar</button>
+        </div>
+        <div class="md:col-span-2 text-center text-xs text-gray-400 mt-2">(Formulário apenas ilustrativo, utilize o email acima para contacto real.)</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-14 py-5 border-t border-teal-100 text-center text-gray-600 text-sm">
+    <div>
+      <span class="font-bold text-teal-700">TRILAB PERFORMANCE</span> &copy; <span id="year"></span> | Centro de Avaliação Fisiológica de Endurance
+    </div>
+    <div class="mt-1">Desenvolvido por Genspark AI para uso institucional</div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Animate sections on scroll
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.fade-in').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 70) {
+          el.style.animationPlayState = 'running';
+        }
+      });
+    });
+    // Enable fade-in for first paint as well
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+</body>
+</html>
